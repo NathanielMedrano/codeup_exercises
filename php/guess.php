@@ -6,7 +6,7 @@ var_dump($argv);
 // Exit with 0 errors
 exit(0);
 //Define Variables
-$num = mt_rand(1,100);
+$num = mt_rand($argc(1),$argv(2));
 $try = 0;
 
 
