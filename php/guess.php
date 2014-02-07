@@ -1,26 +1,26 @@
 <?php 
-
+//Define Variables
 $num = mt_rand(1,100);
 $try = 0;
 
 
 do {
-
+//Prompt question
 fwrite(STDOUT, 'What is your guess? ');
 $guess = fgets(STDIN);
-
-if ($guess > $num) {
-	echo "Lower ";
-}	elseif ($guess < $num) {
-	echo "Higher ";
-}	elseif ($guess == $num) {
-	echo "Good Guess!";
-}
-
-echo "Number of Tries: " . $try++ ;
+//Give hints
+	if ($guess > $num) {
+		echo "Lower ";
+	}	elseif ($guess < $num) {
+		echo "Higher ";
+	}	elseif ($guess == $num) {
+		echo "Good Guess!";
+	}
+//Number of tries
+	echo "Number of Tries: " . $try++ ;
 
 } while ($guess != $num);
-
+//Finish game
 echo "\nGood Game!";
 
 ?>
