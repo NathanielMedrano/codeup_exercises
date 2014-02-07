@@ -1,12 +1,11 @@
 <?php 
-// Dump arg count
-var_dump($argc);
-// Dump arg vars
-var_dump($argv);
-// Exit with 0 errors
-exit(0);
+// If there are 2 args + filename
+if ($argc == 3) {
+    // Echo them out directly
+    echo "arg1 is {$argv[1]} and arg2 is {$argv[2]}\n";
+}
 //Define Variables
-$num = mt_rand($argc(1),$argv(2));
+$num = mt_rand($argv[1],$argv[2]);
 $try = 0;
 
 
