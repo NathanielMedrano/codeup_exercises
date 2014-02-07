@@ -8,7 +8,6 @@ do {
 
 fwrite(STDOUT, 'What is your guess? ');
 $guess = fgets(STDIN);
-//fwrite(STDOUT, $guess);
 
 if ($guess > $num) {
 	echo "Lower ";
