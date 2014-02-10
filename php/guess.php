@@ -3,6 +3,10 @@
 if ($argc == 3) {
     // Echo them out directly
     echo "arg1 is {$argv[1]} and arg2 is {$argv[2]}\n";
+    $filename = strstr($argv[0], '.' ,true);
+    echo $filename . "\n";
+    $extname = strstr($argv[0], '.');
+    echo $extname . "\n";
 }
 //Define Variables
 $num = mt_rand($argv[1],$argv[2]);
@@ -22,7 +26,7 @@ $guess = fgets(STDIN);
 		echo "Good Guess!";
 	}
 //Number of tries
-	echo "Number of Tries: " . $try++ ;
+	echo "Number of Tries: " . ++$try ;
 
 } while ($guess != $num);
 //Finish game
