@@ -26,13 +26,17 @@ $books = array(
 foreach ($books as $title => $book) {
 	echo "{$title}\n";
 
-	foreach ($book as $key => $value) {
-		if ($key == 'published') {
-			echo " written in $value ";
-		} elseif ($key == 'author') {
-			echo "by $value";
-		}	elseif ($key == 'pages') {
-			echo " with {$value} pages\n";
-		}	
+	if ($book['published'] > '1950') {
+
+		foreach ($book as $key => $value) {
+
+			if ($key == 'published') {
+				echo " written in $value ";
+			} elseif ($key == 'author') {
+				echo "by $value";
+			}	elseif ($key == 'pages') {
+				echo " with {$value} pages\n";
+			}	
+		}
 	}
 }
