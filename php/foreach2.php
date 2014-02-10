@@ -24,10 +24,10 @@ $books = array(
 );
 
 foreach ($books as $title => $book) {
-	echo "{$title}\n";
+	
 
 	if ($book['published'] > '1950') {
-
+		echo "{$title}\n";
 		foreach ($book as $key => $value) {
 
 			if ($key == 'published') {
