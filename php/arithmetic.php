@@ -1,7 +1,7 @@
 <?php
 
 function errmess() {
-	echo "Both must be numbers";
+	echo "Both must be numbers\n";
 }
 
 function add($a, $b) {
