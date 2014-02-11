@@ -1,10 +1,14 @@
 <?php
 
+function errmess() {
+	echo "Both must be numbers";
+}
+
 function add($a, $b) {
     if (is_numeric($a) && is_numeric($b)){
     echo ($a + $b) . "\n";
 	} else {
-		echo "Both must be numbers";
+		errmess;
 	}
 }
 
@@ -12,7 +16,7 @@ function sub($a, $b) {
 	if (is_numeric($a) && is_numeric($b)){
    echo ($a - $b) . "\n";
 	} else {
-		echo "Both must be numbers";
+		errmess;
 	}
 }
 
@@ -20,7 +24,7 @@ function multi($a, $b) {
 	if (is_numeric($a) && is_numeric($b)){
     echo ($a * $b) . "\n";
 	} else {
-		echo "Both must be numbers";
+		errmess;
 	}
 }
 
@@ -30,7 +34,7 @@ function divide($a, $b) {
 	} elseif  (is_numeric($a) && is_numeric($b)){
     echo ($a / $b) . "\n";
 	} else {
-		echo "Both must be numbers";
+		errmess;
 	}
 }
 
@@ -38,7 +42,7 @@ function mod($a, $b) {
 	if (is_numeric($a) && is_numeric($b)){
     echo ($a % $b) . "\n";
 	} else {
-		echo "Both must be numbers";
+		errmess;
 	}
 }
 
@@ -54,5 +58,5 @@ mod(9,8);
 
 divide(9,0);
 
-add(9,five);
+add(9,'five');
 ?>
