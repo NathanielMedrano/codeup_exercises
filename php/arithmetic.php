@@ -26,7 +26,7 @@ function multi($a, $b) {
 
 function divide($a, $b) {
 	if ($b == 0) {
-		echo "Not divisable by 0"
+		echo "Not divisable by 0";
 	} elseif  (is_numeric($a) && is_numeric($b)){
     echo ($a / $b) . "\n";
 	} else {
