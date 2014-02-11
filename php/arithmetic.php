@@ -25,7 +25,9 @@ function multi($a, $b) {
 }
 
 function divide($a, $b) {
-	if (is_numeric($a) && is_numeric($b)){
+	if ($b == 0) {
+		echo "Not divisable by 0"
+	} elseif  (is_numeric($a) && is_numeric($b)){
     echo ($a / $b) . "\n";
 	} else {
 		echo "Both must be numbers";
@@ -50,4 +52,7 @@ divide(9,8);
 
 mod(9,8);
 
+divide(9,0);
+
+add(9,five);
 ?>
