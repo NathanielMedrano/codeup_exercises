@@ -2,6 +2,7 @@
 
 // Create array to hold list of todo items
 $items = array();
+$alpha = "";
 
 function list_items($list) {
         $return = '';
@@ -9,6 +10,7 @@ function list_items($list) {
     foreach ($list as $key => $value) {
         $return .= $value . PHP_EOL;
     }
+
     RETURN $return;
 }
 
@@ -23,6 +25,16 @@ function get_input($upper = FALSE) {
     }
 }
 
+function sort_menu($alpha, &$items) {
+
+	if ($alpha == "1") {
+		print_r(sort($items));
+	} elseif ($alpha == "2") {
+		print_r(rsort($items));
+	}
+}
+
+
 // The loop!
 do {
     echo list_items($items);
@@ -30,7 +42,7 @@ do {
     
 
     // Show the menu options
-    echo '(N)ew item, (R)emove item, (Q)uit : ';
+    echo '(N)ew item, (R)emove item, (Q)uit, (S)ort : ';
     $input = get_input(TRUE);
 
      // Check for actionable input
@@ -48,7 +60,15 @@ do {
 
         // Remove from array
         unset($items[$key2]);
+    } elseif ($input == 'S') {
+    	//Sort how?
+    	echo '(1):A-Z or (2):Z-A' . "\n";
+    	//Get sort type
+    	$alpha = get_input();
+    	sort_menu($alpha, $items);
     }
+
+
 // Exit when input is (Q)uit
 } while ($input != 'Q');
 
