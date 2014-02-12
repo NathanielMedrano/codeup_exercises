@@ -42,7 +42,7 @@ do {
     
 
     // Show the menu options
-    echo '(N)ew item, (R)emove item, (Q)uit, (S)ort : ';
+    echo '(N)ew item, (R)emove item, (S)ort, (Q)uit : ';
     $input = get_input(TRUE);
 
      // Check for actionable input
