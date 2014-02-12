@@ -16,7 +16,7 @@ function list_items($list) {
 // and convert to uppercase if $upper is true
 function get_input($upper = FALSE) {
       
-    if ($upper == TRUE) { 
+    if ($upper) { 
       return strtoupper(trim(fgets(STDIN)));
    } else {
         return trim(fgets(STDIN));
@@ -25,7 +25,7 @@ function get_input($upper = FALSE) {
 
 // The loop!
 do {
-    echo list_items($list);
+    echo list_items($items);
 
     
 
@@ -57,4 +57,4 @@ echo "Goodbye!\n";
 
 
 
-}    
+  
