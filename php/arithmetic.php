@@ -34,6 +34,7 @@ function multi($a, $b) {
 
 function divide($a, $b) {
 	if ($b == 0) {
+		//return false;
 		echo "Not divisable by 0\n";
 	} elseif  (is_numeric($a) && is_numeric($b)){
     return ($a / $b) . "\n";
