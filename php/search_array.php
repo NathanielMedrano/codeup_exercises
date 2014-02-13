@@ -16,12 +16,18 @@ function val_arr($array, $input) {
 	//in_array($array, $input);
 }
 
-// function comp_array($array1, $array2) {
+function comp_array($needles, $haystack) {
 
-// 	foreach ($array1 as $key => $value) {
-
-// 	}
-// }
+	$number_matches = 0;
+	foreach ($needles as $needle => $value) {
+		$result = array_search($needle, $haystack);
+			if (is_numeric($result)) {
+				$number_matches++;
+			}
+	}
+	print_r($number_matches);
+	return $number_matches;
+}
 
 do {
 	//prompt search
@@ -37,10 +43,11 @@ do {
 	}	else {
 		echo "False\n";
 	}
+
+	echo comp_array($compare, $names);
 	
 	//var_dump($result);
 }	while ($search == NULL); 
-
 
 
 
