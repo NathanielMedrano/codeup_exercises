@@ -51,7 +51,7 @@ $famous_fake_physicists = str_replace("|", ", ", $famous_fake_physicists);
 $famous_mech_physicists = mechanize_list($physicists_string);
 
 // Output sentence
-echo "Some of the most famous fictional theoretical physicists are " . "$famous_fake_physicists" . " $last" . ".";
+echo "Some of the most famous fictional theoretical physicists are " . "$famous_fake_physicists" . " $last" . ". \n";
 
 
 
