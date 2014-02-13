@@ -28,9 +28,9 @@ function get_input($upper = FALSE) {
 function sort_menu($alpha, &$items) {
 
 	if ($alpha == "1") {
-		print_r(sort($items));
+		sort($items);
 	} elseif ($alpha == "2") {
-		print_r(rsort($items));
+		rsort($items);
 	}
 }
 
@@ -48,9 +48,19 @@ do {
      // Check for actionable input
     if ($input == 'N') {
         // Ask for entry
-        echo 'Enter item: ';
+        echo 'Enter item: (T)op or (E)nd of list: ';
+        $add_item = get_input(TRUE);
+        	
+        	if ($add_item == 'T') {
+        		array_unshift($items, get_input());
+
+        	} elseif ($add_item == 'E') {
+        		array_push($items, get_input());
+        	} else {
+        		get_input();
+        	} 
         // Add entry to list array
-        $items[] = get_input();
+        
     } elseif ($input == 'R') {
         // Remove which item?
         echo 'Enter item number to remove: ';
