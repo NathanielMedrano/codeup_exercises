@@ -42,7 +42,7 @@ do {
     
 
     // Show the menu options
-    echo '(N)ew item, (R)emove item, (S)ort, (Q)uit : ';
+    echo '(N)ew item, (R)emove item, (F)ront remove, (L)ast remove, (S)ort, (Q)uit : ';
     $input = get_input(TRUE);
 
      // Check for actionable input
@@ -60,6 +60,18 @@ do {
 
         // Remove from array
         unset($items[$key2]);
+    } elseif ($input == 'F') {
+        // Remove begginning of array
+        
+        array_shift($items);
+
+ 		
+    }  elseif ($input == 'L') {
+        // Remove begginning of array
+        
+        array_pop($items);
+
+ 
     } elseif ($input == 'S') {
     	//Sort how?
     	echo '(1):A-Z or (2):Z-A' . "\n";
