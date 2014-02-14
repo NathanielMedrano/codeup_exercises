@@ -2,8 +2,10 @@
 
 // Create array to hold list of todo items
 $items = array();
+//Variable to hold input
 $alpha = "";
 
+//Display the array contents
 function list_items($list) {
         $return = '';
 
@@ -25,22 +27,29 @@ function get_input($upper = FALSE) {
     }
 }
 
+//Resort contents of list
 function sort_menu($alpha, &$items) {
 
+	//Use 'usort' so that upper case words are not alphabetized first
 	if ($alpha == "1") {
-		sort($items);
+		usort($items, 'strnatcasecmp');
 
 	} elseif ($alpha == "2") {
 		rsort($items);
 	}
 }
 
-function addfile($alpha) {
+//Add file from relative directory
+function addfile($alpha, &$array) {
 
 	$handle = fopen($alpha, "r");
 	$contents = fread($handle, filesize($alpha));
-	echo $contents . "\n";
+	$contents_array = explode("\n", $contents);
+	$result = array_merge($array, $contents_array);
+	$array = $result;
 	fclose($handle);
+	return $array;
+
 
 	}
 
@@ -104,7 +113,8 @@ do {
 
     	echo 'Enter file path' . "\n";
     	$file_path = get_input();
-    	addfile($file_path);
+    	addfile($file_path, $items);
+
     }
 
 
