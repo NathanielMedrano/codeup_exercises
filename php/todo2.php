@@ -53,6 +53,18 @@ function addfile($alpha, &$array) {
 
 	}
 
+function save($array, $file) {
+
+	if ($file) {
+		$handle = fopen($file, 'a');
+
+		foreach ($array as $key => $value) {
+		    fwrite($handle, PHP_EOL . $value);
+		}    
+	}
+
+}
+
 
 
 // The loop!
@@ -62,7 +74,7 @@ do {
     
 
     // Show the menu options
-    echo '(N)ew item, (O)pen, (R)emove item, (F)ront remove, (L)ast remove, (S)ort, (Q)uit : ';
+    echo '(N)ew item, (O)pen, (R)emove item, (F)ront remove, (L)ast remove, (So)rt, (Sa)ve, (Q)uit : ';
     $input = get_input(TRUE);
 
      // Check for actionable input
@@ -102,7 +114,7 @@ do {
         array_pop($items);
 
  
-    } elseif ($input == 'S') {
+    } elseif ($input == 'SO') {
     	//Sort how?
     	echo '(1):A-Z or (2):Z-A' . "\n";
     	//Get sort type
@@ -114,6 +126,12 @@ do {
     	echo 'Enter file path' . "\n";
     	$file_path = get_input();
     	addfile($file_path, $items);
+
+    } elseif ($input == 'SA') {
+
+    	echo 'Enter file name to save to: ';
+    	$fn = get_input();
+    	save($items, $fn);
 
     }
 
