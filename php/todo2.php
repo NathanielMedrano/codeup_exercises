@@ -29,10 +29,21 @@ function sort_menu($alpha, &$items) {
 
 	if ($alpha == "1") {
 		sort($items);
+
 	} elseif ($alpha == "2") {
 		rsort($items);
 	}
 }
+
+function addfile($alpha) {
+
+	$handle = fopen($alpha, "r");
+	$contents = fread($handle, filesize($alpha));
+	echo $contents . "\n";
+	fclose($handle);
+
+	}
+
 
 
 // The loop!
@@ -42,7 +53,7 @@ do {
     
 
     // Show the menu options
-    echo '(N)ew item, (R)emove item, (F)ront remove, (L)ast remove, (S)ort, (Q)uit : ';
+    echo '(N)ew item, (O)pen, (R)emove item, (F)ront remove, (L)ast remove, (S)ort, (Q)uit : ';
     $input = get_input(TRUE);
 
      // Check for actionable input
@@ -88,6 +99,12 @@ do {
     	//Get sort type
     	$alpha = get_input();
     	sort_menu($alpha, $items);
+
+    } elseif ($input == 'O') {
+
+    	echo 'Enter file path' . "\n";
+    	$file_path = get_input();
+    	addfile($file_path);
     }
 
 
