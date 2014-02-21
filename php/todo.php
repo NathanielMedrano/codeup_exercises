@@ -3,6 +3,26 @@
 // Create array to hold list of todo items
 $items = array();
 
+function list_items($list) {
+        $return = '';
+
+    foreach ($list as $key => $value) {
+        $return .= $value . PHP_EOL;
+    }
+    RETURN $return;
+}
+
+// Get STDIN, strip whitespace and newlines, 
+// and convert to uppercase if $upper is true
+function get_input($upper = FALSE) {
+      
+    if ($upper) { 
+      return (trim(fgets(STDIN)));
+   } else {
+        return (strtoupper($upper));
+    }
+}
+
 // The loop!
 do {
     // Iterate through list items
@@ -13,12 +33,8 @@ do {
 
     // Show the menu options
     echo '(N)ew item, (R)emove item, (Q)uit : ';
-
-    // Get the input from user
-    // Use trim() to remove whitespace and newlines
     $input = trim(fgets(STDIN));
-    $lowup = strtoupper($input);
-    $input = $lowup;
+    
     // Check for actionable input
     if ($input == 'N') {
         // Ask for entry
@@ -43,3 +59,5 @@ echo "Goodbye!\n";
 
 // Exit with 0 errors
 //exit(0);
+
+
